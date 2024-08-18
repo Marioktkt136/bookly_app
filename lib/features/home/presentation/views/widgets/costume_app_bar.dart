@@ -1,4 +1,4 @@
-import 'package:bookly_app/assets_data.dart';
+import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -9,8 +9,6 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        right: 28,
-        left: 28,
         top: 50,
         bottom: 30,
       ),
