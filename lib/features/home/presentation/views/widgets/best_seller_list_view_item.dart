@@ -1,6 +1,7 @@
 import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
@@ -21,7 +22,7 @@ class BestSellerListViewItem extends StatelessWidget {
                 // color: Colors.red,
                 image: const DecorationImage(
                   fit: BoxFit.fill,
-                  image: AssetImage(AssetsData.lion),
+                  image: AssetImage(AssetsData.hP),
                 ),
               ),
             ),
@@ -30,44 +31,59 @@ class BestSellerListViewItem extends StatelessWidget {
         const SizedBox(
           width: 30,
         ),
-        const Column(
-          // mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('The Jungle Book', style: Styles.titleLarge),
-            Text('Rudyard Kipling'),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Text('19.99', style: Styles.titleLarge),
-                SizedBox(
-                  width: 20,
+        Expanded(
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: const Text(
+                  'Harry Potter and the Goblet of Fire',
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                  style: Styles.titleStyle20,
                 ),
-                Icon(
-                  Icons.star,
-                  color: Colors.yellow,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      '4.8',
-                      style: Styles.titleMedium,
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      '(2390)',
-                      style: Styles.titleSmall,
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ],
+              ),
+              Text(
+                'J.K. Rowling',
+                style: Styles.titleStyle14
+                    .copyWith(color: const Color.fromARGB(211, 216, 216, 216)),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Row(
+                children: [
+                  const Text('19.99 €', style: Styles.titleStyle20),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  const Spacer(),
+                  const Icon(
+                    FontAwesomeIcons.solidStar,
+                    color: Colors.yellow,
+                  ),
+                  const SizedBox(
+                    width: 6.3,
+                  ),
+                  const Text(
+                    '4.8',
+                    style: Styles.titleStyle16,
+                  ),
+                  const SizedBox(
+                    width: 6,
+                  ),
+                  Text(
+                    '(2390)',
+                    style: Styles.titleStyle14.copyWith(
+                        color: const Color.fromARGB(211, 216, 216, 216)),
+                  ),
+                  const Spacer(),
+                ],
+              ),
+            ],
+          ),
         ),
       ],
     );
