@@ -44,6 +44,9 @@ class BookDetailsViewBody extends StatelessWidget {
             ),
           ),
         ),
+        const SizedBox(
+          height: 6,
+        ),
       ],
     );
   }

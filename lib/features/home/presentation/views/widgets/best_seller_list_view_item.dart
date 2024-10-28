@@ -1,7 +1,7 @@
 import 'package:bookly_app/core/utils/assets_data.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_rating_item.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
@@ -45,41 +45,28 @@ class BestSellerListViewItem extends StatelessWidget {
                   style: Styles.titleStyle20,
                 ),
               ),
-              Text(
-                'J.K. Rowling',
-                style: Styles.titleStyle14
-                    .copyWith(color: const Color.fromARGB(211, 216, 216, 216)),
+              const Opacity(
+                opacity: .7,
+                child: Text(
+                  'J.K. Rowling',
+                  style: Styles.titleStyle14,
+                ),
               ),
               const SizedBox(
                 height: 8,
               ),
-              Row(
+              const Row(
                 children: [
-                  const Text('19.99 €', style: Styles.titleStyle20),
-                  const SizedBox(
+                  Text(
+                    '19.99 €',
+                    style: Styles.titleStyle20,
+                  ),
+                  SizedBox(
                     width: 20,
                   ),
-                  const Spacer(),
-                  const Icon(
-                    FontAwesomeIcons.solidStar,
-                    color: Colors.yellow,
-                  ),
-                  const SizedBox(
-                    width: 6.3,
-                  ),
-                  const Text(
-                    '4.8',
-                    style: Styles.titleStyle16,
-                  ),
-                  const SizedBox(
-                    width: 6,
-                  ),
-                  Text(
-                    '(2390)',
-                    style: Styles.titleStyle14.copyWith(
-                        color: const Color.fromARGB(211, 216, 216, 216)),
-                  ),
-                  const Spacer(),
+                  Spacer(),
+                  BookRating(),
+                  Spacer(),
                 ],
               ),
             ],
