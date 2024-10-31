@@ -3,25 +3,22 @@ import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-
 class BestSellerListView extends StatelessWidget {
   const BestSellerListView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         GoRouter.of(context).push(AppRouter.kBookDetailsView);
       },
       child: ListView.builder(
           padding: EdgeInsets.zero,
-          // shrinkWrap: true,
-          // itemCount: 10,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
             return const Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0),
-              child: BestSellerListViewItem(),
+              child: BookListViewItem(),
             );
           }),
     );
