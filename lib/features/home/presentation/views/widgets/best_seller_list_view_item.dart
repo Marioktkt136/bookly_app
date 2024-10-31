@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/assets_data.dart';
+import 'package:bookly_app/core/utils/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating_item.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +34,6 @@ class BestSellerListViewItem extends StatelessWidget {
         ),
         Expanded(
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
@@ -45,11 +45,13 @@ class BestSellerListViewItem extends StatelessWidget {
                   style: Styles.titleStyle20,
                 ),
               ),
-              const Opacity(
+              Opacity(
                 opacity: .7,
                 child: Text(
                   'J.K. Rowling',
-                  style: Styles.titleStyle14,
+                  style: Styles.titleStyle14.copyWith(
+                    fontFamily: kGtSectraFine,
+                  ),
                 ),
               ),
               const SizedBox(

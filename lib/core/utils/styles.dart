@@ -5,7 +5,6 @@ abstract class Styles {
   static const titleStyle14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.normal,
-    fontFamily: kGtSectraFine,
   );
 
   static const titleStyle16 = TextStyle(

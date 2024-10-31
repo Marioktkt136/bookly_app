@@ -1,11 +1,5 @@
-import 'dart:ffi';
-
-import 'package:bookly_app/core/utils/constants.dart';
-import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/core/widgets/custom_button.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/book_action.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/book_rating_item.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_details_section.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/similar_book_details_section.dart';
 import 'package:flutter/material.dart';
 import 'custom_book_details_view_app_bar.dart';
 
@@ -14,50 +8,23 @@ class BookDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    return Column(
-      children: [
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.0),
-          child: CustomBookDetailsViewAppBar(),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: width * 0.23),
-          child: const CustomBookImage(),
-        ),
-        const SizedBox(
-          height: 43,
-        ),
-        Text(
-          "The Jungle Book",
-          style: Styles.titleStyle30.copyWith(
-            fontFamily: kPirataOne,
-            fontWeight: FontWeight.normal,
-            fontSize: 35,
+    return const CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Column(
+            children: [
+              CustomBookDetailsViewAppBar(),
+              BookDetailsSection(),
+              Expanded(
+                child: SizedBox(
+                  height: 50,
+                ),
+              ),
+              SimilarBookDetailsSection(),
+            ],
           ),
         ),
-        const SizedBox(
-          height: 6,
-        ),
-        Opacity(
-          opacity: .7,
-          child: Text(
-            "Rudyard Kipling",
-            style: Styles.titleStyle16.copyWith(
-              fontStyle: FontStyle.italic,
-            ),
-          ),
-        ),
-        const SizedBox(
-          height: 12,
-        ),
-        const BookRating(
-          mainAxisAlignment: MainAxisAlignment.center,
-        ),
-        const SizedBox(
-          height: 48,
-        ),
-        const BookAction(),
       ],
     );
   }
